@@ -6,6 +6,7 @@ const { client } = require('./index');
 const { createDepartment, getAllDepartment } = require('./department');
 const { createBreakfast, getAllBreakfast } = require('./breakfast');
 const { createDesserts, getAllDesserts } = require('./desserts');
+const { createEntrees, getAllEntrees } = require('./entrees');
 
 // Step 2: User Methods
     // Method: dropTables
@@ -156,6 +157,28 @@ const { createDesserts, getAllDesserts } = require('./desserts');
             
         }
     }
+
+    // createInitialEntrees
+    async function createInitialEntrees() {
+        console.log("Creating initial entrees...")
+        try {
+            await createEntrees({
+                entreesName: "Beef Stroganoff",
+                departmentId: 2,
+                instructions: "1. In a large skillet, cook beef over medium heat until browned. Add onion and garlic, cook until softened. Stir in mushroom, flour, paprika, salt, and pepper. Cook and stir for 2 minutes. Gradually stir in beef broth and sour cream. Cook and stir until heated through. Serve over cooked egg noodles.",
+                description: "This classic beef stroganoff recipe is easy to make and packed with flavor!",
+                ingredients: "1 lb beef, 1 onion, 1 garlic clove, 1 cup mushroom, 2 tablespoons flour, 1 teaspoon paprika, 1 teaspoon salt, 1/4 teaspoon pepper, 1 cup beef broth, 1 cup sour cream",
+                serving_size: 4,
+                time_to_prepare: "30 minutes",
+                image: "https://www.example.com/beef_stroganoff.jpg"
+            });
+    
+            console.log("Finished creating entrees.")
+        } catch (error) {
+            console.error('Error creating entrees!');
+            console.log(error);
+        }
+    }
     
         // Rebuild DB
         async function rebuildDB() {
@@ -167,6 +190,7 @@ const { createDesserts, getAllDesserts } = require('./desserts');
             await createInitialDepartment();
             await createInitialBreakfast();
             await createInitialDesserts();
+            await createInitialEntrees();
             } catch (error) {
             console.log("Error during rebuildDB!")
             console.log(error.detail);
@@ -192,6 +216,11 @@ const { createDesserts, getAllDesserts } = require('./desserts');
                 console.log("Calling all desserts...")
                 const desserts = await getAllDesserts();
                 console.log("Results", desserts)
+
+                // Test Entrees
+                console.log("Calling all desserts...")
+                const entrees = await getAllEntrees();
+                console.log("Results", entrees)
             
                 console.log("Finished database tests.");
             } catch (error) {

@@ -1,7 +1,7 @@
 const { client } = require("./index") 
 const { createDepartment, getAllDepartment } = require('./department');
 
-// Desserts is Department 1
+// Desserts is Department 2
 
 // getAllDesserts
 async function getAllDesserts () {
