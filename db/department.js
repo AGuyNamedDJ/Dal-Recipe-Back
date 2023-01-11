@@ -12,7 +12,7 @@ async function createDepartment({departmentName}) {
         console.error(error)
     }
 }
-async function getAlldepartment() {
+async function getAllDepartment() {
     try {
         const { rows = [] } = await client.query(`
         SELECT *
@@ -23,7 +23,7 @@ async function getAlldepartment() {
         console.error(error)
     }
 }
-async function getdepartmentById(departmentId) {
+async function getDepartmentById(departmentId) {
     try {
         const { rows } = await client.query(`
         SELECT *
@@ -37,7 +37,6 @@ async function getdepartmentById(departmentId) {
 }
 module.exports = {
     createDepartment,
-    getAlldepartment,
-    getdepartmentById
+    getAllDepartment,
+    getDepartmentById
 }
-

@@ -3,7 +3,7 @@ const { create } = require('domain');
 const { client } = require('./index');
 
 // Imports
-const { createDepartment, getAlldepartment } = require('./department');
+const { createDepartment, getAllDepartment } = require('./department');
 const { createBreakfast, getAllBreakfast } = require('./breakfast');
 
 // Step 2: User Methods
@@ -155,7 +155,7 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
 
                 // Test Department
                 console.log("Calling all department...")
-                const department = await getAlldepartment();
+                const department = await getAllDepartment();
                 console.log("Results", department)
 
                 // Test Breakfast
