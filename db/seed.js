@@ -87,51 +87,52 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
             }
         }
 
-        // Create Initial Department
-        async function createInitialDepartment() {
-            console.log("Creating department...")
-            try {
-                await createDepartment({
-                    departmentName: "breakfast"
-                });
-                await createDepartment({
-                    departmentName: "entrees"
-                });
-                await createDepartment({
-                    departmentName: "desserts"
-                });
-                await createDepartment({
-                    departmentName: "sides"
-                });
-                console.log("Finished creating department.")
-            } catch (error) {
-                console.error('Error creating department!');
-                console.log(error);
-                
-            }
+    // Create Initial Department
+    async function createInitialDepartment() {
+        console.log("Creating departments...");
+        try {
+            await createDepartment({
+                departmentName: "Breakfast"
+            });
+            await createDepartment({
+                departmentName: "Entrees"
+            });
+            await createDepartment({
+                departmentName: "Desserts"
+            });
+            await createDepartment({
+                departmentName: "Sides"
+            });
+            console.log("Finished creating departments.")
+        } catch (error) {
+            console.log("Error creating departments!");
+            console.log(error);
         }
+    }
+    
 
-        async function createInitialBreakfast() {
-            console.log("Creating initial breakfast...")
-            try {
-                await createBreakfast({
-                    breakfastName: "breakfast",
-                    instructions: "breakfast",
-                    departmentId: 1,
-                    description: "good",
-                    ingredients: "alot",
-                    serving_size: 2,
-                    time_to_prepare: "20 minutes",
-                    image: "https://link"
-                });
+    // createInitialBreakfast
+    async function createInitialBreakfast() {
+        console.log("Creating initial breakfast...")
+        try {
+            await createBreakfast({
+                breakfastName: "Scrambled Eggs",
+                departmentId: 1,
+                instructions: "Scramble eggs and serve with toast.",
+                description: "A classic breakfast dish, scrambled eggs are easy to make and a great way to start the day.",
+                ingredients: "Eggs, butter, salt, pepper",
+                serving_size: 2,
+                time_to_prepare: "10 minutes",
+                image: "https://link"
+            });
 
-                console.log("Finished creating department.")
-            } catch (error) {
-                console.error('Error creating department!');
-                console.log(error);
-                
-            }
+            console.log("Finished creating department.")
+        } catch (error) {
+            console.error('Error creating department!');
+            console.log(error);
+            
         }
+    }
 
         // Rebuild DB
         async function rebuildDB() {

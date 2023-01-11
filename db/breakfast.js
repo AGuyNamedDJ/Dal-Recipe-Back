@@ -1,4 +1,5 @@
 const { client } = require("./index") 
+const { createDepartment, getAllDepartment } = require('./department');
 
 // Breakfast is Department 1
 
@@ -49,18 +50,22 @@ async function getAllBreakfastByName (breakfastName) {
 }
 
 // createBreakfast
-async function createBreakfast ({breakfastName, instructions, description, ingredients, serving_size, time_to_prepare, image}) {
-    try{
-        const { rows: [breakfast] } = await client.query(`
-        INSERT INTO breakfast ("breakfastName", "instructions", description, ingredients, serving_size, time_to_prepare, image)
-        VALUES($1, $2, $3, $4, $5, $6, $7)
-        ON CONFLICT ("breakfastName") DO NOTHING
-        RETURNING *;
-        `, [breakfastName, instructions, description, ingredients, serving_size, time_to_prepare, image]);
+// createBreakfast
+async function createBreakfast(breakfastData) {
+    try {
+        const { breakfastName, departmentId, instructions, description, ingredients, serving_size, time_to_prepare, image } = breakfastData;
+        if (!departmentId) {
+            throw new Error('Breakfast must have a valid department Id')
+        }
+        const { rows } = await client.query(`
+            INSERT INTO breakfast("breakfastName", "departmentId", instructions, description, ingredients, serving_size, time_to_prepare, image)
+            VALUES($1, $2, $3, $4, $5, $6, $7, $8)
+            RETURNING *;
+        `, [breakfastName, departmentId, instructions, description, ingredients, serving_size, time_to_prepare, image]);
 
-        return breakfast;
+        return rows[0];
     } catch (error) {
-        console.log ("Error creating breakfast!")
+        console.log("Error creating breakfast!")
         console.log(error);
     }
 }
