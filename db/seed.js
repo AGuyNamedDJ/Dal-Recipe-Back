@@ -42,7 +42,7 @@ const { createDepartment, getAlldepartment } = require('./department');
                 description TEXT NOT NULL,
                 ingredients TEXT NOT NULL,
                 serving_size INTEGER NOT NULL,
-                time_to_prepare INTEGER NOT NULL,
+                time_to_prepare VARCHAR(255) UNIQUE NOT NULL,
                 image VARCHAR(500) UNIQUE
             );
             CREATE TABLE entrees(
@@ -53,7 +53,7 @@ const { createDepartment, getAlldepartment } = require('./department');
                 description TEXT NOT NULL,
                 ingredients TEXT NOT NULL,
                 serving_size INTEGER NOT NULL,
-                time_to_prepare INTEGER NOT NULL,
+                time_to_prepare VARCHAR(255) UNIQUE NOT NULL,
                 image VARCHAR(500) UNIQUE
             );
             CREATE TABLE desserts(
@@ -64,7 +64,7 @@ const { createDepartment, getAlldepartment } = require('./department');
                 description TEXT NOT NULL,
                 ingredients TEXT NOT NULL,
                 serving_size INTEGER NOT NULL,
-                time_to_prepare INTEGER NOT NULL,
+                time_to_prepare VARCHAR(255) UNIQUE NOT NULL,
                 image VARCHAR(500) UNIQUE
             );
             CREATE TABLE sides(
@@ -75,7 +75,7 @@ const { createDepartment, getAlldepartment } = require('./department');
                 description TEXT NOT NULL,
                 ingredients TEXT NOT NULL,
                 serving_size INTEGER NOT NULL,
-                time_to_prepare INTEGER NOT NULL,
+                time_to_prepare VARCHAR(255) UNIQUE NOT NULL,
                 image VARCHAR(500) UNIQUE
             );`);   
     
@@ -86,6 +86,7 @@ const { createDepartment, getAlldepartment } = require('./department');
             }
         }
 
+        // Create Initial Department
         async function createInitialDepartment() {
             console.log("Creating department...")
             try {
@@ -109,6 +110,29 @@ const { createDepartment, getAlldepartment } = require('./department');
             }
         }
 
+        async function createInitialBreakfast() {
+            console.log("Creating initial breakfast...")
+            try {
+                await createBreakfast({
+                    breakfastName: "breakfast",
+                    instructions: "breakfast",
+                    departmentId: 1,
+                    description: "good",
+                    ingredients: "alot",
+                    serving_size: 2,
+                    time_to_prepare: "20 minutes",
+                    image: "https://link"
+                });
+
+                console.log("Finished creating department.")
+            } catch (error) {
+                console.error('Error creating department!');
+                console.log(error);
+                
+            }
+        }
+
+        // Rebuild DB
         async function rebuildDB() {
             try {
             client.connect();
@@ -122,6 +146,7 @@ const { createDepartment, getAlldepartment } = require('./department');
             }
         }
 
+        // Test DB
         async function testDB() {
             try {
                 console.log("Starting to test database...");
@@ -135,11 +160,11 @@ const { createDepartment, getAlldepartment } = require('./department');
             } catch (error) {
                 console.log("Error during testDB!");
                 console.log(error);
-              }
             }
+        }
         
-        rebuildDB()
-            .then(testDB)
-            .catch(console.error)
-            .finally(() => client.end())
+    rebuildDB()
+        .then(testDB)
+        .catch(console.error)
+        .finally(() => client.end())
     
