@@ -25,15 +25,17 @@ To Do List Order - Backend
      - index.js
 2. Root index.js
 3. Begin in DB dir
+   - set up Index.js
    - begin in Seed.js
-      - Begin template for seed.js
-      - drop tables
-      - create tables
-      - begin createInitial functions
-      - RebuildDB
-      - TestDB
+     - Begin template for seed.js
+     - drop tables
+     - create tables
+     - begin createInitial functions
+     - RebuildDB
+     - TestDB
    - Create files as needed
    - export them
    - import them into the seed
-   
-  
+4. Begin API dir
+
+- begin index.js

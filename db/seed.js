@@ -181,7 +181,6 @@ const { createSides, getAllSides } = require('./sides');
         }
     }
 
-    // createInitialSides
 // createInitialSides
 async function createInitialSides() {
     console.log("Creating initial sides...")
@@ -203,62 +202,61 @@ async function createInitialSides() {
         console.log(error);
     }
 }
-
     
-        // Rebuild DB
-        async function rebuildDB() {
-            try {
-            client.connect();
-            console.log("Running DB function...")
-            await dropTables();
-            await createTables();
-            await createInitialDepartment();
-            await createInitialBreakfast();
-            await createInitialDesserts();
-            await createInitialEntrees();
-            await createInitialSides();
-            } catch (error) {
-            console.log("Error during rebuildDB!")
-            console.log(error.detail);
-            }
+    // Rebuild DB
+    async function rebuildDB() {
+        try {
+        client.connect();
+        console.log("Running DB function...")
+        await dropTables();
+        await createTables();
+        await createInitialDepartment();
+        await createInitialBreakfast();
+        await createInitialDesserts();
+        await createInitialEntrees();
+        await createInitialSides();
+        } catch (error) {
+        console.log("Error during rebuildDB!")
+        console.log(error.detail);
         }
+    }
 
-        // Test DB
-        async function testDB() {
-            try {
-                console.log("Starting to test database...");
+    // Test DB
+    async function testDB() {
+        try {
+            console.log("Starting to test database...");
 
-                // Test Department
-                console.log("Calling all department...")
-                const department = await getAllDepartment();
-                console.log("Results", department)
+            // Test Department
+            console.log("Calling all department...")
+            const department = await getAllDepartment();
+            console.log("Results", department)
 
-                // Test Breakfast
-                console.log("Calling all breakfast...")
-                const breakfast = await getAllBreakfast();
-                console.log("Results", breakfast)
+            // Test Breakfast
+            console.log("Calling all breakfast...")
+            const breakfast = await getAllBreakfast();
+            console.log("Results", breakfast)
 
-                // Test Desserts
-                console.log("Calling all desserts...")
-                const desserts = await getAllDesserts();
-                console.log("Results", desserts)
+            // Test Desserts
+            console.log("Calling all desserts...")
+            const desserts = await getAllDesserts();
+            console.log("Results", desserts)
 
-                // Test Entrees
-                console.log("Calling all entrees...")
-                const entrees = await getAllEntrees();
-                console.log("Results", entrees)
+            // Test Entrees
+            console.log("Calling all entrees...")
+            const entrees = await getAllEntrees();
+            console.log("Results", entrees)
 
-                // Test Sides
-                console.log("Calling all sides...")
-                const sides = await getAllSides();
-                console.log("Results", sides)
-            
-                console.log("Finished database tests.");
-            } catch (error) {
-                console.log("Error during testDB!");
-                console.log(error);
-            }
+            // Test Sides
+            console.log("Calling all sides...")
+            const sides = await getAllSides();
+            console.log("Results", sides)
+        
+            console.log("Finished database tests.");
+        } catch (error) {
+            console.log("Error during testDB!");
+            console.log(error);
         }
+    }
         
     rebuildDB()
         .then(testDB)
