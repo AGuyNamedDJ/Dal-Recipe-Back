@@ -50,7 +50,6 @@ async function getAllBreakfastByName (breakfastName) {
 }
 
 // createBreakfast
-// createBreakfast
 async function createBreakfast(breakfastData) {
     try {
         const { breakfastName, departmentId, instructions, description, ingredients, serving_size, time_to_prepare, image } = breakfastData;

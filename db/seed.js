@@ -5,6 +5,7 @@ const { client } = require('./index');
 // Imports
 const { createDepartment, getAllDepartment } = require('./department');
 const { createBreakfast, getAllBreakfast } = require('./breakfast');
+const { createDesserts, getAllDesserts } = require('./desserts');
 
 // Step 2: User Methods
     // Method: dropTables
@@ -38,7 +39,7 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
             CREATE TABLE breakfast(
                 "breakfastId" SERIAL PRIMARY KEY,
                 "breakfastName" VARCHAR(255) UNIQUE NOT NULL,
-                instructions VARCHAR(255) UNIQUE NOT NULL,
+                instructions VARCHAR(500) UNIQUE NOT NULL,
                 "departmentId" INTEGER REFERENCES department("departmentId"),
                 description TEXT NOT NULL,
                 ingredients TEXT NOT NULL,
@@ -49,7 +50,7 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
             CREATE TABLE entrees(
                 "entreesId" SERIAL PRIMARY KEY,
                 "entreesName" VARCHAR(255) UNIQUE NOT NULL,
-                instructions VARCHAR(255) UNIQUE NOT NULL,
+                instructions VARCHAR(500) UNIQUE NOT NULL,
                 "departmentId" INTEGER REFERENCES department("departmentId"),
                 description TEXT NOT NULL,
                 ingredients TEXT NOT NULL,
@@ -60,7 +61,7 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
             CREATE TABLE desserts(
                 "dessertsId" SERIAL PRIMARY KEY,
                 "dessertsName" VARCHAR(255) UNIQUE NOT NULL,
-                instructions VARCHAR(255) UNIQUE NOT NULL,
+                instructions VARCHAR(500) UNIQUE NOT NULL,
                 "departmentId" INTEGER REFERENCES department("departmentId"),
                 description TEXT NOT NULL,
                 ingredients TEXT NOT NULL,
@@ -71,7 +72,7 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
             CREATE TABLE sides(
                 "sidesId" SERIAL PRIMARY KEY,
                 "sidesName" VARCHAR(255) UNIQUE NOT NULL,
-                instructions VARCHAR(255) UNIQUE NOT NULL,
+                instructions VARCHAR(500) UNIQUE NOT NULL,
                 "departmentId" INTEGER REFERENCES department("departmentId"),
                 description TEXT NOT NULL,
                 ingredients TEXT NOT NULL,
@@ -110,7 +111,6 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
         }
     }
     
-
     // createInitialBreakfast
     async function createInitialBreakfast() {
         console.log("Creating initial breakfast...")
@@ -126,14 +126,37 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
                 image: "https://link"
             });
 
-            console.log("Finished creating department.")
+            console.log("Finished creating breakfast.")
         } catch (error) {
-            console.error('Error creating department!');
+            console.error('Error creating breakfast!');
             console.log(error);
             
         }
     }
 
+    // createInitialDesserts
+    async function createInitialDesserts() {
+        console.log("Creating initial desserts...")
+        try {
+            await createDesserts({
+                dessertsName: "Chocolate Cake",
+                departmentId: 2,
+                instructions: "1. Preheat oven to 350°F. Grease and flour a 9x13 inch baking pan. In a medium mixing bowl, combine flour, sugar, cocoa, baking soda, baking powder, and salt.  Add eggs, milk, warm water, oil, and vanilla. Mix well.  Pour batter into prepared pan.  Bake for 30-35 minutes, or until a toothpick inserted into the center comes out clean.  Allow to cool in the pan for 10 minutes, then remove and transfer to a wire rack to cool completely. Spread frosting over cooled cake.",
+                description: "This chocolate cake recipe is rich and delicious. Perfect for any occasion!",
+                ingredients: "1 cup white sugar, 1 cup butter, 4 eggs, 1 teaspoon vanilla extract, 2 cups all-purpose flour, 3/4 cup unsweetened cocoa powder, 1 teaspoon baking soda, 1/2 teaspoon baking powder, 1/2 teaspoon salt, 1 cup buttermilk",
+                serving_size: 12,
+                time_to_prepare: "1 hour",
+                image: "https://www.example.com/chocolate_cake.jpg"
+            });
+
+            console.log("Finished creating desserts.")
+        } catch (error) {
+            console.error('Error creating desserts!');
+            console.log(error);
+            
+        }
+    }
+    
         // Rebuild DB
         async function rebuildDB() {
             try {
@@ -143,6 +166,7 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
             await createTables();
             await createInitialDepartment();
             await createInitialBreakfast();
+            await createInitialDesserts();
             } catch (error) {
             console.log("Error during rebuildDB!")
             console.log(error.detail);
@@ -163,6 +187,11 @@ const { createBreakfast, getAllBreakfast } = require('./breakfast');
                 console.log("Calling all breakfast...")
                 const breakfast = await getAllBreakfast();
                 console.log("Results", breakfast)
+
+                // Test Desserts
+                console.log("Calling all desserts...")
+                const desserts = await getAllDesserts();
+                console.log("Results", desserts)
             
                 console.log("Finished database tests.");
             } catch (error) {
