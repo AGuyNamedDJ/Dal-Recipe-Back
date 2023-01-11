@@ -86,17 +86,25 @@ const { createDepartment, getAlldepartment } = require('./department');
             }
         }
 
-        async function createInitialdepartment() {
+        async function createInitialDepartment() {
             console.log("Creating department...")
             try {
-                await createdepartment({
-                    departmentName: "Baked Goods"
+                await createDepartment({
+                    departmentName: "breakfast"
                 });
-                await createdepartment({
-                    departmentName: "Candy"
+                await createDepartment({
+                    departmentName: "entrees"
+                });
+                await createDepartment({
+                    departmentName: "desserts"
+                });
+                await createDepartment({
+                    departmentName: "sides"
                 });
                 console.log("Finished creating department.")
             } catch (error) {
+                console.error('Error creating department!');
+                console.log(error);
                 
             }
         }
@@ -107,7 +115,7 @@ const { createDepartment, getAlldepartment } = require('./department');
             console.log("Running DB function...")
             await dropTables();
             await createTables();
-            await createInitialdepartment();
+            await createInitialDepartment();
             } catch (error) {
             console.log("Error during rebuildDB!")
             console.log(error.detail);

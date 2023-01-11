@@ -1,6 +1,6 @@
 const { client } = require('./index')
 
-async function createdepartment({departmentName}) {
+async function createDepartment({departmentName}) {
     try {
         await client.query(`
         INSERT INTO department("departmentName")
@@ -14,7 +14,7 @@ async function createdepartment({departmentName}) {
 }
 async function getAlldepartment() {
     try {
-        const { rows } = await client.query(`
+        const { rows = [] } = await client.query(`
         SELECT *
         FROM department;
         `);
@@ -36,7 +36,7 @@ async function getdepartmentById(departmentId) {
     }
 }
 module.exports = {
-    createdepartment,
+    createDepartment,
     getAlldepartment,
     getdepartmentById
 }

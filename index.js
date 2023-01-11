@@ -18,7 +18,6 @@ app.use(express.json());
 app.use(express.urlencoded( { extended: false } ));
 
 // Subrouter
-app.use('/api', apiRouter);
 
 // Port
 const PORT = process.env.PORT || 3001
