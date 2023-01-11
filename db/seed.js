@@ -7,6 +7,7 @@ const { createDepartment, getAllDepartment } = require('./department');
 const { createBreakfast, getAllBreakfast } = require('./breakfast');
 const { createDesserts, getAllDesserts } = require('./desserts');
 const { createEntrees, getAllEntrees } = require('./entrees');
+const { createSides, getAllSides } = require('./sides');
 
 // Step 2: User Methods
     // Method: dropTables
@@ -141,7 +142,7 @@ const { createEntrees, getAllEntrees } = require('./entrees');
         try {
             await createDesserts({
                 dessertsName: "Chocolate Cake",
-                departmentId: 2,
+                departmentId: 3,
                 instructions: "1. Preheat oven to 350°F. Grease and flour a 9x13 inch baking pan. In a medium mixing bowl, combine flour, sugar, cocoa, baking soda, baking powder, and salt.  Add eggs, milk, warm water, oil, and vanilla. Mix well.  Pour batter into prepared pan.  Bake for 30-35 minutes, or until a toothpick inserted into the center comes out clean.  Allow to cool in the pan for 10 minutes, then remove and transfer to a wire rack to cool completely. Spread frosting over cooled cake.",
                 description: "This chocolate cake recipe is rich and delicious. Perfect for any occasion!",
                 ingredients: "1 cup white sugar, 1 cup butter, 4 eggs, 1 teaspoon vanilla extract, 2 cups all-purpose flour, 3/4 cup unsweetened cocoa powder, 1 teaspoon baking soda, 1/2 teaspoon baking powder, 1/2 teaspoon salt, 1 cup buttermilk",
@@ -179,6 +180,30 @@ const { createEntrees, getAllEntrees } = require('./entrees');
             console.log(error);
         }
     }
+
+    // createInitialSides
+// createInitialSides
+async function createInitialSides() {
+    console.log("Creating initial sides...")
+    try {
+        await createSides({
+            sidesName: "Garlic Roasted Potatoes",
+            departmentId: 4,
+            instructions: "1. Preheat oven to 425 degrees. Cut potatoes into bite-size pieces and put in a large bowl. Toss potatoes with olive oil, garlic, salt, and pepper.  2. Spread potatoes onto a baking sheet and roast for 25-30 minutes, or until golden brown and tender.",
+            description: "These garlic roasted potatoes are the perfect side for any meal!",
+            ingredients: "4 large potatoes, 2 tablespoons olive oil, 3 cloves garlic, minced, 1 teaspoon salt, 1/4 teaspoon pepper",
+            serving_size: 4,
+            time_to_prepare: "45 minutes",
+            image: "https://www.example.com/garlic_potatoes.jpg"
+        });
+
+        console.log("Finished creating sides.")
+    } catch (error) {
+        console.error('Error creating sides!');
+        console.log(error);
+    }
+}
+
     
         // Rebuild DB
         async function rebuildDB() {
@@ -191,6 +216,7 @@ const { createEntrees, getAllEntrees } = require('./entrees');
             await createInitialBreakfast();
             await createInitialDesserts();
             await createInitialEntrees();
+            await createInitialSides();
             } catch (error) {
             console.log("Error during rebuildDB!")
             console.log(error.detail);
@@ -218,9 +244,14 @@ const { createEntrees, getAllEntrees } = require('./entrees');
                 console.log("Results", desserts)
 
                 // Test Entrees
-                console.log("Calling all desserts...")
+                console.log("Calling all entrees...")
                 const entrees = await getAllEntrees();
                 console.log("Results", entrees)
+
+                // Test Sides
+                console.log("Calling all sides...")
+                const sides = await getAllSides();
+                console.log("Results", sides)
             
                 console.log("Finished database tests.");
             } catch (error) {
