@@ -3,24 +3,24 @@ const { create } = require('domain');
 const { client } = require('./index');
 
 // Imports
-
+const { createDepartment, getAlldepartment } = require('./department');
 
 // Step 2: User Methods
     // Method: dropTables
     async function dropTables(){
         try {
-            console.log("Dropping tables: ");
+            console.log("Dropping tables... ");
             await client.query(`
             DROP TABLE IF EXISTS breakfast;
             DROP TABLE IF EXISTS entrees;
             DROP TABLE IF EXISTS desserts;
             DROP TABLE IF EXISTS sides;
-            DROP TABLE IF EXISTS departments;
+            DROP TABLE IF EXISTS department;
             `)
         
-            console.log("Finished dropping tables")
+            console.log("Finished dropping tables.")
         } catch(error){
-            console.log("Error dropping tables")
+            console.log("Error dropping tables!")
             console.log(error.detail)
         }
     }
@@ -30,7 +30,7 @@ const { client } = require('./index');
         try {
             console.log('Starting to build tables...');
             await client.query(`
-            CREATE TABLE departments(
+            CREATE TABLE department(
                 "departmentId" SERIAL PRIMARY KEY,
                 "departmentName" VARCHAR(255) UNIQUE NOT NULL
             );
@@ -79,22 +79,37 @@ const { client } = require('./index');
                 image VARCHAR(500) UNIQUE
             );`);   
     
-            console.log('Finished building tables!');
+            console.log('Finished building tables.');
             } catch (error) {
             console.error('Error building tables!');
             console.log(error);
             }
         }
 
+        async function createInitialdepartment() {
+            console.log("Creating department...")
+            try {
+                await createdepartment({
+                    departmentName: "Baked Goods"
+                });
+                await createdepartment({
+                    departmentName: "Candy"
+                });
+                console.log("Finished creating department.")
+            } catch (error) {
+                
+            }
+        }
 
         async function rebuildDB() {
             try {
             client.connect();
-            console.log("running DB function")
+            console.log("Running DB function...")
             await dropTables();
             await createTables();
+            await createInitialdepartment();
             } catch (error) {
-            console.log("Error during rebuildDB:")
+            console.log("Error during rebuildDB!")
             console.log(error.detail);
             }
         }
@@ -102,13 +117,15 @@ const { client } = require('./index');
         async function testDB() {
             try {
                 console.log("Starting to test database...");
-            // need to fix this below
-                const  = await ();
-                console.log("getAllUsers:", users);
+
+                // department
+                console.log("Calling all department...")
+                const department = await getAlldepartment();
+                console.log("Results", department)
             
-                console.log("Finished database tests!");
+                console.log("Finished database tests.");
             } catch (error) {
-                console.log("Error during testDB");
+                console.log("Error during testDB!");
                 console.log(error);
               }
             }
