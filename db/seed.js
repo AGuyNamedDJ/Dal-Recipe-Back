@@ -4,6 +4,7 @@ const { client } = require('./index');
 
 // Imports
 const { createDepartment, getAlldepartment } = require('./department');
+const { createBreakfast, getAllBreakfast } = require('./breakfast');
 
 // Step 2: User Methods
     // Method: dropTables
@@ -140,6 +141,7 @@ const { createDepartment, getAlldepartment } = require('./department');
             await dropTables();
             await createTables();
             await createInitialDepartment();
+            await createInitialBreakfast();
             } catch (error) {
             console.log("Error during rebuildDB!")
             console.log(error.detail);
@@ -151,10 +153,15 @@ const { createDepartment, getAlldepartment } = require('./department');
             try {
                 console.log("Starting to test database...");
 
-                // department
+                // Test Department
                 console.log("Calling all department...")
                 const department = await getAlldepartment();
                 console.log("Results", department)
+
+                // Test Breakfast
+                console.log("Calling all breakfast...")
+                const breakfast = await getAllBreakfast();
+                console.log("Results", breakfast)
             
                 console.log("Finished database tests.");
             } catch (error) {
