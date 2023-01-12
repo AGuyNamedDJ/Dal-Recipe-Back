@@ -6,6 +6,4 @@ const pg = require('pg');
 const client = new pg.Client(`postgres://localhost:5432/Dal-Recipe`);
 
 // 3) Export this client connection that we just created
-module.exports = {
-    client
-}
+module.exports = { client };

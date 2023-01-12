@@ -1,4 +1,3 @@
-// Requires
 const express = require('express');
 const morgan = require('morgan'); 
 const app = express(); // Creates express server instance
@@ -7,20 +6,25 @@ const app = express(); // Creates express server instance
 const { apiRouter } = require('./api/index');
 const { client } = require('./db/index');
 
-
 // Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 
-// Middleware for translating (parsing) JSON content that has been sent to us in a request
-app.use(express.json());
+// Catch-all route handler
+app.get("/", (req, res) => {
+    res.send("Server is Running!")
+});
 
-// Middleware for translating (parsing) encoded html forms that have been sent to us in a request
-app.use(express.urlencoded( { extended: false } ));
-
-// Route Handeler
-// app.get("/", (req, res) => {})
+// Router Handelers
 app.use('/api', apiRouter);
-client.connect();
+
+try {
+    client.connect();
+} catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Unable to connect to database." });
+};
 
 // Port
 const PORT = process.env.PORT || 3001

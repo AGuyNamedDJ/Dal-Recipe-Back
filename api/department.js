@@ -1,6 +1,6 @@
 // Imports
 const express = require ('express');
-const { getAllDepartment, getDepartmentById } = require('../db/Department')
+const { getAllDepartment, getDepartmentById } = require('../db/department');
 
 // Router Middleware
 const departmentRouter = express.Router();
