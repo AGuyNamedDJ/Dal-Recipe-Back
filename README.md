@@ -24,6 +24,14 @@ To Do List Order - Backend
        - seed.js
      - index.js
 2. Root index.js
+
+- import requires
+- import project dirs
+- Middleware
+- Route Handelers
+- Port
+- Export
+
 3. Begin in DB dir
    - set up Index.js
    - begin in Seed.js

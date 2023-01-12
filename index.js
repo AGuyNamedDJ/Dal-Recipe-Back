@@ -1,23 +1,25 @@
 // Requires
-require('dotenv').config();
 const express = require('express');
-const morgan = require('morgan');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+const morgan = require('morgan'); 
+const app = express(); // Creates express server instance
+
+// Import project dirs
 const { apiRouter } = require('./api/index');
 const { client } = require('./db/index');
-const cors = require('cors')
 
-// Express Server
-const app = express();
 
 // Middleware
 app.use(morgan('dev'));
-app.use(cors())
+
+// Middleware for translating (parsing) JSON content that has been sent to us in a request
 app.use(express.json());
+
+// Middleware for translating (parsing) encoded html forms that have been sent to us in a request
 app.use(express.urlencoded( { extended: false } ));
 
-// Subrouter
+// Route Handeler
+// app.get("/", (req, res) => {})
+app.use('/api', apiRouter);
 
 // Port
 const PORT = process.env.PORT || 3001
