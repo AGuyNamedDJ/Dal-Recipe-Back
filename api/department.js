@@ -33,4 +33,4 @@ departmentRouter.get("/:departmentId", async (req, res, next) => {
 })
 
 // Exports
-module.exports = {departmentRouter};
+module.exports = {departmentRouter}
