@@ -45,5 +45,7 @@ To Do List Order - Backend
    - export them
    - import them into the seed
 4. Begin API dir
-
-- begin index.js
+   - begin index.js
+   - create mini routers & export
+   - import all into index.js
+   - test routes
