@@ -10,21 +10,18 @@ const breakfastRouter = express.Router();
 breakfastRouter.get('/', async (req, res, next) =>{
     try{
         const breakfast = await getAllBreakfast();
-        res.send(
-            breakfast
-        ) 
+        res.send(breakfast) 
     } catch (error) {
         console.log("Error getting all breakfast!")
     }
 });
 
-    //GET/breakfastById 
+    // GET/breakfastById 
 breakfastRouter.get('/:breakfastId', async (req, res, next) => {
     const {breakfastId} = req.params 
 try {
     const newBreakfastId = await getAllBreakfastById (breakfastId)
-    res.send (newBreakfastId)
-
+    res.send(newBreakfastId)
     } catch (error) {
         console.log(error)
     }
