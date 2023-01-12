@@ -14,6 +14,4 @@ apiRouter.use('/entrees', entreesRouter);
 apiRouter.use('/sides', sidesRouter);
 
 // Export
-module.exports = {
-    apiRouter
-}
+module.exports = {apiRouter}

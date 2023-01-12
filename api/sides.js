@@ -1,6 +1,6 @@
 // Imports
 const express = require("express");
-const { getAllSides, getAllSidesById, getAllSidesByName } = require('../db/desserts');
+const { getAllSides, getAllSidesById, getAllSidesByName } = require('../db/sides');
 
 // .Router Middleware
 const sidesRouter = express.Router();
@@ -16,7 +16,7 @@ sidesRouter.get('/', async (req, res, next) =>{
     }
 });
 
-    //GET/sidesById 
+    // GET/sidesById 
 sidesRouter.get('/:sidesId', async (req, res, next) => {
     const {sidesId} = req.params 
 try {

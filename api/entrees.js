@@ -1,6 +1,6 @@
 // Imports
 const express = require("express");
-const { getAllEntrees, getAllEntreesById, getAllEntreesByName } = require('../db/desserts');
+const { getAllEntrees, getAllEntreesById, getAllEntreesByName } = require('../db/entrees');
 
 // .Router Middleware
 const entreesRouter = express.Router();
