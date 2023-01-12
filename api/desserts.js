@@ -17,7 +17,7 @@ dessertsRouter.get('/', async (req, res, next) =>{
 });
 
     //GET/dessertsById 
-breakfastRouter.get('/:dessertsId', async (req, res, next) => {
+dessertsRouter.get('/:dessertsId', async (req, res, next) => {
     const {dessertsId} = req.params 
 try {
     const newDessertsId = await getAllDessertsById (dessertsId)

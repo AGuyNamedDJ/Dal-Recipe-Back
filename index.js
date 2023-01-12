@@ -20,17 +20,13 @@ app.use(express.urlencoded( { extended: false } ));
 // Route Handeler
 // app.get("/", (req, res) => {})
 app.use('/api', apiRouter);
+client.connect();
 
 // Port
 const PORT = process.env.PORT || 3001
-client.connect();
 app.listen(PORT, () => {
     console.log(`Now running on port ${PORT}`)
 });
 
 // Export
-module.exports = {
-    client,
-    jwt,
-    bcrypt
-}
+module.exports = {client};
