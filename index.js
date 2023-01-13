@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan'); 
+const cors = require('cors');
 const app = express(); // Creates express server instance
 
 // Import project dirs
@@ -10,6 +11,7 @@ const { client } = require('./db/index');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('dev'));
+app.use(cors());
 
 // Catch-all route handler
 app.get("/", (req, res) => {

@@ -1,6 +1,7 @@
 // Imports
 const express = require("express");
 const { getAllBreakfast, getAllBreakfastById, getAllBreakfastByName } = require('../db/breakfast');
+const { getDepartmentById } = require("../db/department");
 
 // .Router Middleware
 const breakfastRouter = express.Router();
