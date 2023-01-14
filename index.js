@@ -29,8 +29,8 @@ try {
     res.status(500).json({ error: "Unable to connect to database." });
 };
 
-// .env
-console.log(process.env)
+// // .env
+// console.log(process.env)
 
 // Port
 const PORT = process.env.PORT || 3001
