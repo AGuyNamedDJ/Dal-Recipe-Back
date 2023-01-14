@@ -29,6 +29,9 @@ try {
     res.status(500).json({ error: "Unable to connect to database." });
 };
 
+// .env
+console.log(process.env)
+
 // Port
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
@@ -37,3 +40,6 @@ app.listen(PORT, () => {
 
 // Export
 module.exports = {client};
+
+
+// This file is also called server.js
