@@ -1,5 +1,6 @@
 const express = require('express');
 const apiRouter = express.Router();
+require('dotenv').config()
  
 // Routers 
 const { departmentRouter } = require('./department');
