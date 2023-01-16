@@ -125,7 +125,7 @@ const { createSides, getAllSides } = require('./sides');
                 ingredients: "Eggs, butter, salt, pepper",
                 serving_size: 2,
                 time_to_prepare: "10 minutes",
-                image: "https://link"
+                image: "https://assets.epicurious.com/photos/5956873a40721c7cf72d80ca/16:9/w_2560%2Cc_limit/This-Scrambled-Egg-Trick--29062017.jpg"
             });
 
             console.log("Finished creating breakfast.")
@@ -148,7 +148,7 @@ const { createSides, getAllSides } = require('./sides');
                 ingredients: "1 cup white sugar, 1 cup butter, 4 eggs, 1 teaspoon vanilla extract, 2 cups all-purpose flour, 3/4 cup unsweetened cocoa powder, 1 teaspoon baking soda, 1/2 teaspoon baking powder, 1/2 teaspoon salt, 1 cup buttermilk",
                 serving_size: 12,
                 time_to_prepare: "1 hour",
-                image: "https://www.example.com/chocolate_cake.jpg"
+                image: "https://assets.bonappetit.com/photos/59c924dc32e4b84f5a9e437a/8:5/w_4279,h_2674,c_limit/1017%20WEB%20WEEK1060.jpg"
             });
 
             console.log("Finished creating desserts.")
@@ -171,7 +171,7 @@ const { createSides, getAllSides } = require('./sides');
                 ingredients: "1 lb beef, 1 onion, 1 garlic clove, 1 cup mushroom, 2 tablespoons flour, 1 teaspoon paprika, 1 teaspoon salt, 1/4 teaspoon pepper, 1 cup beef broth, 1 cup sour cream",
                 serving_size: 4,
                 time_to_prepare: "30 minutes",
-                image: "https://www.example.com/beef_stroganoff.jpg"
+                image: "https://assets.epicurious.com/photos/5761cb888accf290434553a4/16:9/w_1280,c_limit/beef-stroganoff.jpg"
             });
     
             console.log("Finished creating entrees.")
@@ -193,7 +193,7 @@ async function createInitialSides() {
             ingredients: "4 large potatoes, 2 tablespoons olive oil, 3 cloves garlic, minced, 1 teaspoon salt, 1/4 teaspoon pepper",
             serving_size: 4,
             time_to_prepare: "45 minutes",
-            image: "https://www.example.com/garlic_potatoes.jpg"
+            image: "https://assets.bonappetit.com/photos/5ec6af660ade4fa69795be62/8:5/w_1887,h_1179,c_limit/Brad-Miso-Grilled-Potatoes-2.jpg"
         });
 
         console.log("Finished creating sides.")
