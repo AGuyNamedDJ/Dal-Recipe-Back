@@ -2,6 +2,7 @@ const { client } = require("./index")
 const { createDepartment, getAllDepartment } = require('./department');
 
 // Breakfast is Department 1
+console.log("HELLOOO")
 
 // getAllBreakfast
 async function getAllBreakfast () {
@@ -33,7 +34,7 @@ async function getAllBreakfastById (breakfastId) {
     }
 }
 
-// getAllBreakfsatByName
+// getAllBreakfastByName
 async function getAllBreakfastByName (breakfastName) {
     try{
         const { rows : [breakfast] } = await client.query(`

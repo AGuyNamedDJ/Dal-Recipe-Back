@@ -38,7 +38,7 @@ async function getAllEntreesByName (entreesName) {
     try{
         const { rows : [entrees] } = await client.query(`
         SELECT *
-        FROM dessert
+        FROM entrees
         WHERE "entreesName"=$1;
         `, [entreesName]);
 

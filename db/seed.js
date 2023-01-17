@@ -4,10 +4,10 @@ const { client } = require('./index');
 
 // Imports
 const { createDepartment, getAllDepartment } = require('./department');
-const { createBreakfast, getAllBreakfast } = require('./breakfast');
-const { createDesserts, getAllDesserts } = require('./desserts');
-const { createEntrees, getAllEntrees } = require('./entrees');
-const { createSides, getAllSides } = require('./sides');
+const { createBreakfast, getAllBreakfast, getAllBreakfastById } = require('./breakfast');
+const { createDesserts, getAllDesserts, getAllDessertsById } = require('./desserts');
+const { createEntrees, getAllEntrees, getAllEntreesById } = require('./entrees');
+const { createSides, getAllSides, getAllSidesById } = require('./sides');
 
 // Step 2: User Methods
     // Method: dropTables
@@ -676,20 +676,40 @@ const { createSides, getAllSides } = require('./sides');
             const breakfast = await getAllBreakfast();
             console.log("Results", breakfast)
 
+            // Test the function
+            console.log("Calling all breakfastID 12...")
+            const breakfastId = await getAllBreakfastById(12);
+            console.log("Results", breakfastId);
+
             // Test Desserts
             console.log("Calling all desserts...")
             const desserts = await getAllDesserts();
             console.log("Results", desserts)
+
+            // Test the function
+            console.log("Calling only dessertsId 12...")
+            const dessertsId = await getAllDessertsById(10);
+            console.log("Results", dessertsId);
 
             // Test Entrees
             console.log("Calling all entrees...")
             const entrees = await getAllEntrees();
             console.log("Results", entrees)
 
+            // Test the function
+            console.log("Calling all entreesId 12...")
+            const entreesId = await getAllEntreesById(12);
+            console.log("Results", entreesId);
+
             // Test Sides
             console.log("Calling all sides...")
             const sides = await getAllSides();
             console.log("Results", sides)
+
+            // Test the function
+            console.log("Calling all sidesId 10...")
+            const sidesId = await getAllSidesById(10);
+            console.log("Results", sidesId);
         
             console.log("Finished database tests.");
         } catch (error) {

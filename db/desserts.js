@@ -22,8 +22,8 @@ async function getAllDessertsById (dessertsId) {
     try {
         const { rows: [desserts] } = await client.query (`
         SELECT *
-        FROM dessert
-        WHERE "dessertId"=$1;
+        FROM desserts
+        WHERE "dessertsId"=$1;
         `, [dessertsId]);
 
         return desserts;
@@ -38,7 +38,7 @@ async function getAllDessertsByName (dessertsName) {
     try{
         const { rows : [desserts] } = await client.query(`
         SELECT *
-        FROM dessert
+        FROM desserts
         WHERE "dessertsName"=$1;
         `, [dessertsName]);
 
