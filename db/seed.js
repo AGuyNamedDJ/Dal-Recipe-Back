@@ -124,7 +124,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "A classic breakfast dish, scrambled eggs are easy to make and a great way to start the day.",
                 ingredients: "Eggs, butter, salt, pepper",
                 serving_size: 2,
-                time_to_prepare: "10 minutes",
+                time_to_prepare: "4 minutes",
                 image: "https://assets.epicurious.com/photos/5956873a40721c7cf72d80ca/16:9/w_2560%2Cc_limit/This-Scrambled-Egg-Trick--29062017.jpg"
             });
             await createBreakfast({
@@ -134,7 +134,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "Fluffy pancakes with a burst of fresh blueberries in every bite.",
                 ingredients: "Flour, sugar, baking powder, salt, eggs, milk, butter, blueberries",
                 serving_size: 4,
-                time_to_prepare: "20 minutes",
+                time_to_prepare: "15 minutes",
                 image: "https://media.30seconds.com/tip/lg/Old-fashioned-Pancake-Recipes-Start-the-Day-With-This-Fluf-15561-bd4837c4bd-1627743462.jpg"
             });
             await createBreakfast({
@@ -144,7 +144,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "A sweet and delicious breakfast dish, French toast is a favorite for many. Perfect for weekends or special occasions.",
                 ingredients: "Bread, eggs, milk, sugar, vanilla extract, butter, syrup",
                 serving_size: 4,
-                time_to_prepare: "15 minutes",
+                time_to_prepare: "16 minutes",
                 image: "https://assets.bonappetit.com/photos/57ad254ff1c801a1038bc9c9/3:2/w_1998,h_1332,c_limit/FRENCH-TOAST.jpg"
                 });
             await createBreakfast({
@@ -154,7 +154,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "Fluffy and delicious, these banana pancakes are a great way to add some variety to your breakfast routine.",
                 ingredients: "Flour, sugar, baking powder, salt, eggs, milk, mashed banana, vanilla extract",
                 serving_size: 4,
-                time_to_prepare: "20 minutes",
+                time_to_prepare: "14 minutes",
                 image: "https://www.ambitiouskitchen.com/wp-content/uploads/2019/04/bananaoatmealpancakes-2long.jpg"
                 });
             await createBreakfast({
@@ -164,7 +164,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "A delicious and hearty breakfast taco made with crispy bacon, scrambled eggs, cheese, and tomatoes.",
                 ingredients: "Bacon, eggs, flour tortillas, shredded cheese, diced tomatoes, salt, pepper",
                 serving_size: 2,
-                time_to_prepare: "15 minutes",
+                time_to_prepare: "22 minutes",
                 image: "https://mexicanfoodjournal.com/wp-content/uploads/2017/07/Breakfast-Tacos-Bacon-Potato.jpg"
                 });
             await createBreakfast({
@@ -174,7 +174,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "A hearty and delicious omelette filled with savory ham and melted cheese.",
                 ingredients: "Eggs, diced ham, shredded cheese, salt, pepper",
                 serving_size: 1,
-                time_to_prepare: "15 minutes",
+                time_to_prepare: "8 minutes",
                 image: "https://food-images.files.bbci.co.uk/food/recipes/cheeseomelette_80621_16x9.jpg"
                 });
             await createBreakfast({
@@ -184,7 +184,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "A delicious breakfast sandwich with a crispy slice of ham and a perfectly cooked egg.",
                 ingredients: "Ham, egg, bread, butter",
                 serving_size: 1,
-                time_to_prepare: "10 minutes",
+                time_to_prepare: "11 minutes",
                 image: "https://iamhomesteader.com/wp-content/uploads/2022/02/breakfast-sandwich-2.jpg"
                 });
             await createBreakfast({
@@ -194,7 +194,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "A hearty breakfast option, steak and eggs provide a good balance of protein and fat to start your day.",
                 ingredients: "Steak, eggs, butter, salt, pepper",
                 serving_size: 2,
-                time_to_prepare: "20 minutes",
+                time_to_prepare: "24 minutes",
                 image: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1300,h_880/https://smokedngrilled.com/wp-content/uploads/2021/05/steak-and-eggs-1300x880.jpg"
                 });
             await createBreakfast({
@@ -204,7 +204,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "A French classic, crepes are thin pancakes that can be filled with sweet or savory ingredients for a delicious breakfast.",
                 ingredients: "flour, eggs, milk, salt",
                 serving_size: 2,
-                time_to_prepare: "20 minutes",
+                time_to_prepare: "12 minutes",
                 image: "https://c4.wallpaperflare.com/wallpaper/751/875/638/food-crepes-breakfast-wallpaper-preview.jpg"
                 });
             await createBreakfast({
@@ -214,7 +214,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "Warm and comforting, this oatmeal is like having a cinnamon roll for breakfast without all the guilt.",
                 ingredients: "Rolled oats, cinnamon, brown sugar, cream cheese frosting",
                 serving_size: 1,
-                time_to_prepare: "10 minutes",
+                time_to_prepare: "7 minutes",
                 image: "https://media.self.com/photos/5c3e2f219056dc2fa7dbd7ee/master/pass/oatmeal.jpg"
             });
             await createBreakfast({
@@ -224,7 +224,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "A southern classic, shrimp and grits is a hearty and flavorful breakfast option.",
                 ingredients: "Shrimp, butter, grits, salt, pepper, cajun seasoning (optional)",
                 serving_size: 2,
-                time_to_prepare: "20 minutes",
+                time_to_prepare: "21 minutes",
                 image: "https://www.foodlion.com/content/dam/Recipes/EasyLemonGarlicShrimpAndGrits/Final-lemon-garlic-shrimp-and-grits.jpg.adapt.full.high.jpg"
                 });
             await createBreakfast({
@@ -234,7 +234,7 @@ const { createSides, getAllSides } = require('./sides');
                 description: "A hearty and savory breakfast option, this sandwich features juicy sausage and a fried egg on a toasted roll.",
                 ingredients: "Sausage links, eggs, salt, pepper, toasted roll, cheese (optional)",
                 serving_size: 1,
-                time_to_prepare: "15 minutes",
+                time_to_prepare: "17 minutes",
                 image: "https://assets.bonappetit.com/photos/5ca50a3f8aca5dd5a3f6976a/3:2/w_4443,h_2962,c_limit/0419-breakfast-sandwich.jpg"
                 });
                     
