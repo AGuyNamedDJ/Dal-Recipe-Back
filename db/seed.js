@@ -127,12 +127,121 @@ const { createSides, getAllSides } = require('./sides');
                 time_to_prepare: "10 minutes",
                 image: "https://assets.epicurious.com/photos/5956873a40721c7cf72d80ca/16:9/w_2560%2Cc_limit/This-Scrambled-Egg-Trick--29062017.jpg"
             });
-
+            await createBreakfast({
+                breakfastName: "Blueberry Pancakes",
+                departmentId: 1,
+                instructions: "Mix pancake batter, fold in blueberries, cook on griddle.",
+                description: "Fluffy pancakes with a burst of fresh blueberries in every bite.",
+                ingredients: "Flour, sugar, baking powder, salt, eggs, milk, butter, blueberries",
+                serving_size: 4,
+                time_to_prepare: "20 minutes",
+                image: "https://media.30seconds.com/tip/lg/Old-fashioned-Pancake-Recipes-Start-the-Day-With-This-Fluf-15561-bd4837c4bd-1627743462.jpg"
+            });
+            await createBreakfast({
+                breakfastName: "French Toast",
+                departmentId: 1,
+                instructions: "Dip bread in mixture of eggs, milk, sugar, and vanilla. Cook on griddle.",
+                description: "A sweet and delicious breakfast dish, French toast is a favorite for many. Perfect for weekends or special occasions.",
+                ingredients: "Bread, eggs, milk, sugar, vanilla extract, butter, syrup",
+                serving_size: 4,
+                time_to_prepare: "15 minutes",
+                image: "https://assets.bonappetit.com/photos/57ad254ff1c801a1038bc9c9/3:2/w_1998,h_1332,c_limit/FRENCH-TOAST.jpg"
+                });
+            await createBreakfast({
+                breakfastName: "Banana Pancakes",
+                departmentId: 1,
+                instructions: "Mix together ingredients, cook on a griddle, and serve with syrup.",
+                description: "Fluffy and delicious, these banana pancakes are a great way to add some variety to your breakfast routine.",
+                ingredients: "Flour, sugar, baking powder, salt, eggs, milk, mashed banana, vanilla extract",
+                serving_size: 4,
+                time_to_prepare: "20 minutes",
+                image: "https://www.ambitiouskitchen.com/wp-content/uploads/2019/04/bananaoatmealpancakes-2long.jpg"
+                });
+            await createBreakfast({
+                breakfastName: "Bacon and Egg Breakfast Tacos",
+                departmentId: 1,
+                instructions: "Cook bacon in a skillet until crispy. In the same skillet, scramble eggs. Warm tortillas in the oven or on a skillet. Assemble tacos by placing eggs and bacon on a tortilla, top with shredded cheese and diced tomatoes. Serve immediately.",
+                description: "A delicious and hearty breakfast taco made with crispy bacon, scrambled eggs, cheese, and tomatoes.",
+                ingredients: "Bacon, eggs, flour tortillas, shredded cheese, diced tomatoes, salt, pepper",
+                serving_size: 2,
+                time_to_prepare: "15 minutes",
+                image: "https://mexicanfoodjournal.com/wp-content/uploads/2017/07/Breakfast-Tacos-Bacon-Potato.jpg"
+                });
+            await createBreakfast({
+                breakfastName: "Ham and Cheese Omelette",
+                departmentId: 1,
+                instructions: "Whisk eggs in a bowl, add diced ham and shredded cheese. Cook in a pan until set, fold in half and serve.",
+                description: "A hearty and delicious omelette filled with savory ham and melted cheese.",
+                ingredients: "Eggs, diced ham, shredded cheese, salt, pepper",
+                serving_size: 1,
+                time_to_prepare: "15 minutes",
+                image: "https://food-images.files.bbci.co.uk/food/recipes/cheeseomelette_80621_16x9.jpg"
+                });
+            await createBreakfast({
+                breakfastName: "Ham and Egg Breakfast Sandwich",
+                departmentId: 1,
+                instructions: "Fry a slice of ham and an egg in a pan. Place the egg on top of the ham and put it between two slices of toast. Serve and enjoy!",
+                description: "A delicious breakfast sandwich with a crispy slice of ham and a perfectly cooked egg.",
+                ingredients: "Ham, egg, bread, butter",
+                serving_size: 1,
+                time_to_prepare: "10 minutes",
+                image: "https://iamhomesteader.com/wp-content/uploads/2022/02/breakfast-sandwich-2.jpg"
+                });
+            await createBreakfast({
+                breakfastName: "Steak and Eggs",
+                departmentId: 1,
+                instructions: "Cook steak to desired doneness, fry eggs to preference, and serve together with toast.",
+                description: "A hearty breakfast option, steak and eggs provide a good balance of protein and fat to start your day.",
+                ingredients: "Steak, eggs, butter, salt, pepper",
+                serving_size: 2,
+                time_to_prepare: "20 minutes",
+                image: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1300,h_880/https://smokedngrilled.com/wp-content/uploads/2021/05/steak-and-eggs-1300x880.jpg"
+                });
+            await createBreakfast({
+                breakfastName: "Crepes",
+                departmentId: 1,
+                instructions: "Mix together flour, eggs, milk and salt in a blender. Heat a non-stick pan over medium-high heat. Pour a small amount of batter in the center of the pan and swirl to spread evenly. Cook for 2-3 minutes per side. Fill with your choice of sweet or savory fillings.",
+                description: "A French classic, crepes are thin pancakes that can be filled with sweet or savory ingredients for a delicious breakfast.",
+                ingredients: "flour, eggs, milk, salt",
+                serving_size: 2,
+                time_to_prepare: "20 minutes",
+                image: "https://c4.wallpaperflare.com/wallpaper/751/875/638/food-crepes-breakfast-wallpaper-preview.jpg"
+                });
+            await createBreakfast({
+                breakfastName: "Cinnamon Roll Oatmeal",
+                departmentId: 1,
+                instructions: "Cook oatmeal according to package instructions. Stir in cinnamon and brown sugar. Top with a dollop of cream cheese frosting.",
+                description: "Warm and comforting, this oatmeal is like having a cinnamon roll for breakfast without all the guilt.",
+                ingredients: "Rolled oats, cinnamon, brown sugar, cream cheese frosting",
+                serving_size: 1,
+                time_to_prepare: "10 minutes",
+                image: "https://media.self.com/photos/5c3e2f219056dc2fa7dbd7ee/master/pass/oatmeal.jpg"
+            });
+            await createBreakfast({
+                breakfastName: "Shrimp and Grits",
+                departmentId: 1,
+                instructions: "Cook grits according to package instructions. In a separate pan, sauté shrimp in butter and seasonings. Serve shrimp on top of grits.",
+                description: "A southern classic, shrimp and grits is a hearty and flavorful breakfast option.",
+                ingredients: "Shrimp, butter, grits, salt, pepper, cajun seasoning (optional)",
+                serving_size: 2,
+                time_to_prepare: "20 minutes",
+                image: "https://www.foodlion.com/content/dam/Recipes/EasyLemonGarlicShrimpAndGrits/Final-lemon-garlic-shrimp-and-grits.jpg.adapt.full.high.jpg"
+                });
+            await createBreakfast({
+                breakfastName: "Sausage and Egg Breakfast Sandwich",
+                departmentId: 1,
+                instructions: "Cook sausage in a skillet over medium heat until browned. Crack eggs into the skillet, season with salt and pepper. Cook until set. Serve on a toasted roll with cheese if desired.",
+                description: "A hearty and savory breakfast option, this sandwich features juicy sausage and a fried egg on a toasted roll.",
+                ingredients: "Sausage links, eggs, salt, pepper, toasted roll, cheese (optional)",
+                serving_size: 1,
+                time_to_prepare: "15 minutes",
+                image: "https://assets.bonappetit.com/photos/5ca50a3f8aca5dd5a3f6976a/3:2/w_4443,h_2962,c_limit/0419-breakfast-sandwich.jpg"
+                });
+                    
             console.log("Finished creating breakfast.")
         } catch (error) {
             console.error('Error creating breakfast!');
             console.log(error);
-            
         }
     }
 
