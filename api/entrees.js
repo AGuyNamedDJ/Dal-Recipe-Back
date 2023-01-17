@@ -21,7 +21,7 @@ entreesRouter.get('/', async (req, res, next) =>{
 entreesRouter.get('/:entreesId', async (req, res, next) => {
     const {entreesId} = req.params 
 try {
-    const newEntreesId = await getAllDessertsById (entreesId)
+    const newEntreesId = await getAllEntreesById (entreesId)
     res.send(newEntreesId)
     } catch (error) {
         console.log(error)
